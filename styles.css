@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общие стили для контейнера */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Стили для заголовка */
+header {
+  background-color: #222;
+  color: white;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Стили для обзоров */
+main {
+  padding: 40px 0;
+}
+
+main h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+main p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+main img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+main hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+}
+
+/* Стили для футера */
+footer {
+  background-color: #ddd;
+  padding: 10px 0;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+} 
