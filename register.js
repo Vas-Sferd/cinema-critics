@@ -1,18 +1,22 @@
-(function() {
-    const form = document.querySelector('form');
-    const password = document.querySelector('#password');
-    const confirm_password = document.querySelector('#confirm_password');
-  
-    form.addEventListener('submit', function(event) {
-      let error = '';
-  
-      if (password.value !== confirm_password.value) {
-        error += 'Passwords must match\n';
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch('register_process.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        window.location.href = 'index.php';
+      } else {
+        const errorElement = document.getElementById('error-message');
+        errorElement.textContent = data.message;
+        errorElement.classList.remove('hidden');
       }
-  
-      if (error !== '') {
-        alert(error);
-        event.preventDefault();
-      }
-    });
-  })(); 
+    })
+    .catch(error => console.error(error));
+  }); 

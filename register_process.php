@@ -1,4 +1,7 @@
 <?php
+
+header('Content-Type: application/json');
+
 // Проверяем, была ли отправлена форма
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
@@ -27,10 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   // Редиректим на главную страницу сайта
   header("Location: index.php");
+  echo json_encode(['status' => 'success']);
   exit();
 }
 
 // Если форма не была отправлена, перенаправляем обратно на страницу регистрации
 header("Location: register.php");
+echo json_encode(null);
+
 exit();
 ?>
